@@ -1,6 +1,6 @@
 spring:
   flyway:
-    enabled: false
+    enabled: true
   datasource:
     host: localhost
     port: 5432   # ✅ Add this line
