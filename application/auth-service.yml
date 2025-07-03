@@ -20,5 +20,5 @@ spring:
         issuer: http://auth-service
 
 jwt:
-  secret-key: your-256-bit-secret-key-here-12345678901234567890123456789012
+  secret-key: gUjf49v3aEwtk0yDQf9n0+pQ1n6YJtMTZD+QoYKw0qE= # your-256-bit-secret-key-here-12345678901234567890123456789012
   expiration: 86400000 # 24 hours
