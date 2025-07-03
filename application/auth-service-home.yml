@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    host: localhost
+    password: Test@123
+    username: postgres
+    url: jdbc:postgresql://${spring.datasource.host}:${spring.datasource.port}/marketplugtest
+    port: 5432
+    hikari: 
+      maximum-pool-size: 2
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+  security:
+    oauth2:
+      authorization-server:
+        issuer: http://auth-service
