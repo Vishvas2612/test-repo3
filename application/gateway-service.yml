@@ -65,3 +65,10 @@ application:
       expiration: 86400000 # a day
       refresh-token:
         expiration: 604800000 # 7 days
+
+security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://auth-service
+          jwk-set-uri: http://auth-service/oauth2/jwks
