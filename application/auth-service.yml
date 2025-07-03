@@ -3,10 +3,13 @@ server:
 
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/auth_db?createDatabaseIfNotExist=true
-    username: root
-    password: password
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    host: localhost
+    password: Test@123
+    username: postgres
+    url: jdbc:postgresql://${spring.datasource.host}:${spring.datasource.port}/marketplugtest
+    port: 5432
+    hikari: 
+      maximum-pool-size: 2
   jpa:
     hibernate:
       ddl-auto: validate
