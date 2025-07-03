@@ -1,24 +1,6 @@
 server:
   port: 9000
 
-spring:
-  datasource:
-    host: localhost
-    password: Test@123
-    username: postgres
-    url: jdbc:postgresql://${spring.datasource.host}:${spring.datasource.port}/marketplugtest
-    port: 5432
-    hikari: 
-      maximum-pool-size: 2
-  jpa:
-    hibernate:
-      ddl-auto: validate
-    show-sql: true
-  security:
-    oauth2:
-      authorization-server:
-        issuer: http://auth-service
-
 jwt:
   secret-key: gUjf49v3aEwtk0yDQf9n0+pQ1n6YJtMTZD+QoYKw0qE= # your-256-bit-secret-key-here-12345678901234567890123456789012
   expiration: 86400000 # 24 hours
