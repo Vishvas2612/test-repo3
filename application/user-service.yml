@@ -1,1 +1,91 @@
 
+
+server:
+  port: 8082
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_SERVER:http://localhost:8761/eureka}
+    registerWithEureka: true
+    fetchRegistry: true
+  instance:
+    preferIpAddress: true
+
+logging:
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} %m%n"
+   
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+application:
+  security:
+    jwt:
+      #https://emn178.github.io/online-tools/sha384.html : trendaftersftwithvishvas
+      secret-key: cb72e6ceea39d3243cbe42a87b95e0d9364695a761dcfd45e7549408860db3fee2e2abe11c56752eec2c52b68e9ea03c
+      # 1 day = (1 * 24 * 60 * 60) * 1000         = 86400000
+      # 30 day = (30 * 24 * 60 * 60) * 1000       = 2592000000
+      # 45 days = (45 * 24 * 60 * 60) * 1000      = 3888000000
+      # 1 min = (1 * 60) * 1000                   = 60000 
+      expiration: 2592000000
+      refresh-token:
+        expiration: 3888000000
+
+spring:
+  servlet:
+    multipart:
+      max-file-size: 2000MB
+      max-request-size: 2000MB
+
+firebaseProjectName: Trend
+        
+smtp:
+  from: Trend <no-reply@trendapp.uk>
+  fromName: Trend
+  contactUsEmail: Trend <support@trendapp.uk>
+  fromMario: Mario di Marko <mariodimarko@trendapp.uk>
+  username: AKIAWDRY7TQZ73636CPU   #Paris
+  password: BD0YZmyJKsnmw8CbMH/JXW25H1EEAcNsQdsTnvPVUjNN   #Paris
+  port: 587
+  host: email-smtp.eu-west-3.amazonaws.com
+  contactUsSubject: New Contact Us Message
+  restoreAccountEmailSubject: Account Deletion Confirmation - Restore Available
+  verifyEmailSubject: Email Address Verification Request
+  verifyEmailSuccessSubject : Email is verified
+  forgotEmailSubject: Reset your password
+  downloadAppSubject: Download the SFT App
+  regardsName: Trend Team
+  headerImageUrl:  https://sft-prod.s3.eu-west-3.amazonaws.com/sft-header.png
+  footerImageUrl: https://sft-prod.s3.eu-west-3.amazonaws.com/sft-footer-latest2.png
+  coverImageUrl: https://sft-prod.s3.eu-west-3.amazonaws.com/sft-cover.png
+  mariodimarkoProfileImageUrl: https://sft-prod.s3.eu-west-3.amazonaws.com/Mariodimarko.png
+  googlePlayImageUrl: https://play.google.com/store/apps/details?id=ch.sft.sftplatform
+  appleStoreImageUrl: https://apps.apple.com/in/app/sft-social-trading/id1633240152
+  appLogoUrl: https://sft-prod.s3.eu-west-3.amazonaws.com/AppLogo.png
+  
+new:
+  smtp:
+    sft-email: https://sft-prod.s3.eu-west-3.amazonaws.com/sft-email-new.png
+    sft-email-verified: https://sft-prod.s3.eu-west-3.amazonaws.com/sft-email-varified-new.png
+    forgot-password: https://sft-prod.s3.eu-west-3.amazonaws.com/forgot-password-new.png
+    email-address-verification: https://sft-prod.s3.eu-west-3.amazonaws.com/email-address-verification-new.png
+    sft-mobile-design: https://sft-prod.s3.eu-west-3.amazonaws.com/sft-mobile-design-new.png
+    pro-activation: https://sft-prod.s3.eu-west-3.amazonaws.com/pro-activation-new.png
+    mario: https://sft-prod.s3.eu-west-3.amazonaws.com/mario-new.png
+    basic-trading-manual: https://sft-prod.s3.eu-west-3.amazonaws.com/basic-trading-manual-new.png  
+    google-play: https://sft-prod.s3.eu-west-3.amazonaws.com/google-play-new.png
+    apple-store: https://sft-prod.s3.eu-west-3.amazonaws.com/apple-store-new.png
+    arrow: https://sft-prod.s3.eu-west-3.amazonaws.com/arrow-new.png
+    sft-small-logo: https://sft-prod.s3.eu-west-3.amazonaws.com/sft-small-logo-new.png
+
+maxSize:
+  mb:
+    userProfile: 50
+    userProfileErrorMsg: The uploaded image exceeds the maximum allowed size of 50 MB. Please upload an image within the size limit. 
+    userProfileCover: 50
+    userProfileCoverErrorMsg: The uploaded cover image exceeds the maximum allowed size of 50 MB. Please upload an image within the size limit.
+    ageVerification: 50
+    ageVerificationErrorMsg: The uploaded image exceeds the maximum allowed size of 50 MB. Please upload an image within the size limit. 
