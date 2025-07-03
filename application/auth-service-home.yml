@@ -1,12 +1,13 @@
 spring:
   datasource:
     host: localhost
-    password: Test@123
+    port: 5432   # ✅ Add this line
     username: postgres
+    password: Test@123
     url: jdbc:postgresql://${spring.datasource.host}:${spring.datasource.port}/marketplugtest
-    port: 5432
-    hikari: 
+    hikari:
       maximum-pool-size: 2
+
   jpa:
     hibernate:
       ddl-auto: validate
