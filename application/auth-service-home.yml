@@ -20,3 +20,7 @@ spring:
     oauth2:
       authorization-server:
         issuer: http://auth-service
+
+logging:
+  level:
+    org.flywaydb.core: DEBUG
