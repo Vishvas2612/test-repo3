@@ -19,8 +19,10 @@ spring:
     show-sql: true
   security:
     oauth2:
-      authorization-server:
-        issuer: http://auth-service
+      resourceserver:
+        jwt:
+          issuer-uri: http://auth-service
+          jwk-set-uri: http://auth-service/oauth2/jwks
 
 logging:
   level:
