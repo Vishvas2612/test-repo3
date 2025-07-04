@@ -50,6 +50,18 @@ spring:
 
         # Map provider to registration
         default-provider: custom
+  security:
+    oauth2:
+      client:
+        registration:
+          gateway-client:
+            client-id: gateway-client
+            client-secret: secret
+            authorization-grant-type: client_credentials
+            scope: read
+        provider:
+          spring:
+            issuer-uri: http://localhost:9000
 
 springdoc:
   swagger-ui:
