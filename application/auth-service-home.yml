@@ -20,7 +20,7 @@ spring:
   security:
     oauth2:
       authorization-server:
-        issuer: issuer: http://localhost:9000 # http://auth-service:9000, https://auth.yourdomain.com
+        issuer-uri: http://localhost:9000 # http://auth-service:9000, https://auth.yourdomain.com
 
 logging:
   level:
