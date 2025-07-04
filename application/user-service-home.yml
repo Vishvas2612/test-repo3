@@ -26,3 +26,5 @@ spring:
 logging:
   level:
     org.flywaydb.core: DEBUG
+    org.springframework.security.oauth2: DEBUG
+    org.springframework.security: DEBUG
