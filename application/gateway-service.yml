@@ -48,18 +48,6 @@ spring:
           filters:
             - RewritePath=/v3/api-docs/(?<path>.*), /$\{path}/v3/api-docs
 
-    oauth2:
-      client:
-        registration:
-          gateway-client:
-            client-id: gateway-client
-            client-secret: secret
-            authorization-grant-type: client_credentials
-            scope: read
-        provider:
-          custom:
-            issuer-uri: http://localhost:9000
-
         # Map provider to registration
         default-provider: custom
 
