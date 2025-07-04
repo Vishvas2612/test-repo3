@@ -4,3 +4,4 @@ server:
 jwt:
   secret-key: gUjf49v3aEwtk0yDQf9n0+pQ1n6YJtMTZD+QoYKw0qE= # your-256-bit-secret-key-here-12345678901234567890123456789012
   expiration: 86400000 # 24 hours
+  refresh-expiration: 604800000 # 7 days for refresh token
