@@ -61,7 +61,7 @@ application:
   security:
     jwt:
       #https://emn178.github.io/online-tools/sha384.html : trendaftersftwithvishvas
-      secret-key: cb72e6ceea39d3243cbe42a87b95e0d9364695a761dcfd45e7549408860db3fee2e2abe11c56752eec2c52b68e9ea03c
+      secret-key: gUjf49v3aEwtk0yDQf9n0+pQ1n6YJtMTZD+QoYKw0qE=
       expiration: 86400000 # a day
       refresh-token:
         expiration: 604800000 # 7 days
