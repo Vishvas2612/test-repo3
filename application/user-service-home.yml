@@ -21,8 +21,7 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: http://localhost:9000 # http://auth-service:9000, https://auth.yourdomain.com
-          jwk-set-uri: http://localhost:9000/oauth2/jwks
+          issuer-uri: http://localhost:9000
 
 logging:
   level:
