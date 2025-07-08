@@ -2,7 +2,7 @@ server:
   port: 9001
 
 jwt:
-  secret-key: gUjf49v3aEwtk0yDQf9n0+pQ1n6YJtMTZD+QoYKw0qE= # your-256-bit-secret-key-here-12345678901234567890123456789012
+  secret-key: JZ0GPiKdh4/dcMaeZStgOa6mqXE6k6VBgpWsZMNcD0i+9m5U83t8wuq0nXZZ40xsdZGIxloWVI6mmfK0z8Go1Q==
   expiration: 86400000 # 24 hours
   refresh-token:
     expiration: 604800000 # 7 days
