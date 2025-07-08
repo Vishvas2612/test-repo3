@@ -11,8 +11,8 @@ eureka:
     preferIpAddress: true
 
 logging:
-  pattern:
-    console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} %m%n"
+  level:
+    org.springframework.cloud.gateway: DEBUG
 
 spring:
   cloud:
@@ -50,6 +50,15 @@ spring:
 
         # Map provider to registration
         default-provider: custom
+
+  main:
+    web-application-type: reactive
+    
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://localhost:8081/auth/.well-known/jwks.json # optional if using public key method
 
 springdoc:
   swagger-ui:
