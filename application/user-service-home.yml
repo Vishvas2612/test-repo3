@@ -12,11 +12,16 @@ spring:
     url: jdbc:postgresql://${spring.datasource.host}:${spring.datasource.port}/marketplugtest
     hikari:
       maximum-pool-size: 2
-
   jpa:
     hibernate:
       ddl-auto: validate
     show-sql: true
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          secret-key: JZ0GPiKdh4/dcMaeZStgOa6mqXE6k6VBgpWsZMNcD0i+9m5U83t8wuq0nXZZ40xsdZGIxloWVI6mmfK0z8Go1Q==
+
 
 logging:
   level:
