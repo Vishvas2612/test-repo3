@@ -50,18 +50,6 @@ spring:
 
         # Map provider to registration
         default-provider: custom
-  security:
-    oauth2:
-      client:
-        registration:
-          gateway-client:
-            client-id: gateway-client
-            client-secret: secret
-            authorization-grant-type: client_credentials
-            scope: read
-        provider:
-          spring:
-            issuer-uri: http://localhost:9000
 
 springdoc:
   swagger-ui:
@@ -70,19 +58,3 @@ springdoc:
         url: /v3/api-docs/auth
       - name: user
         url: /v3/api-docs/user
-
-        
-application:
-  security:
-    jwt:
-      #https://emn178.github.io/online-tools/sha384.html : trendaftersftwithvishvas
-      secret-key: gUjf49v3aEwtk0yDQf9n0+pQ1n6YJtMTZD+QoYKw0qE=
-      expiration: 86400000 # a day
-      refresh-token:
-        expiration: 604800000 # 7 days
-
-security:
-    oauth2:
-      resourceserver:
-        jwt:
-          issuer-uri: http://localhost:9000 # http://auth-service:9000, https://auth.yourdomain.com
