@@ -23,7 +23,7 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          secret-key: bXktc3VwZXItc2VjdXJlLXBhc3NwaHJhc2Utd2hpY2gtaXMtbG9uZy1lbm91Z2gtdG8tdXNlLXdpdGgtSFM1MTI=
+          secret-key: cb72e6ceea39d3243cbe42a87b95e0d9364695a761dcfd45e7549408860db3fee2e2abe11c56752eec2c52b68e9ea03c
 
 logging:
   level:
