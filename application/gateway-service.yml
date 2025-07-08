@@ -52,7 +52,7 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          jwk-set-uri: http://localhost:8081/auth/.well-known/jwks.json # optional if using public key method
+          secret-key: cb72e6ceea39d3243cbe42a87b95e0d9364695a761dcfd45e7549408860db3fee2e2abe11c56752eec2c52b68e9ea03c
 
 springdoc:
   swagger-ui:
