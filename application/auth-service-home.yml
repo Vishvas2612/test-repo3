@@ -20,20 +20,6 @@ spring:
     hibernate:
       ddl-auto: validate
     show-sql: true
-  security:
-    oauth2:
-      authorizationserver:
-        client:
-          gateway-client:
-            registration:
-              client-id: gateway-client
-              client-secret: secret
-              authorization-grant-types:
-                - password
-                - refresh_token
-              scopes:
-                - read
-                - write
 
 logging:
   level:
