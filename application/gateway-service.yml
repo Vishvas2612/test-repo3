@@ -50,9 +50,6 @@ spring:
 
         # Map provider to registration
         default-provider: custom
-
-  main:
-    web-application-type: reactive
     
   security:
     oauth2:
