@@ -47,11 +47,12 @@ spring:
             - Path=/v3/api-docs/**
           filters:
             - RewritePath=/v3/api-docs/(?<path>.*), /$\{path}/v3/api-docs
-      default-filters:
-        - name: JwtAuthenticationFilter
-          args:
-            secret: your-secret-key-which-should-be-long-and-secure
     
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          secret-key: JZ0GPiKdh4/dcMaeZStgOa6mqXE6k6VBgpWsZMNcD0i+9m5U83t8wuq0nXZZ40xsdZGIxloWVI6mmfK0z8Go1Q==
 
 springdoc:
   swagger-ui:
