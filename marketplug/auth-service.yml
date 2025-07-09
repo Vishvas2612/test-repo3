@@ -1,8 +1,6 @@
 server:
   port: 9000
 
-springdoc:
-  api-docs:
-    path: /v3/api-docs
-  swagger-ui:
-    path: /swagger-ui.html
+swagger:
+  ui-path: /swagger-ui.html
+  api-docs: /v3/api-docs
