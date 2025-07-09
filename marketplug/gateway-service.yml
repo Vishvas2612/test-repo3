@@ -19,6 +19,9 @@ spring:
     gateway:
       default-filters:
         - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
+        - name: JwtAuthenticationFilter
+          args:
+            secret: your-secret-key-which-should-be-long-and-secure
       globalcors:
         corsConfigurations:
           '[/**]':
