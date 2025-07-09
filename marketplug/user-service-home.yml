@@ -1,3 +1,6 @@
+server:
+  base-url: http://localhost:8081/user
+  
 spring:
   flyway:
     enabled: false
@@ -26,7 +29,3 @@ logging:
     org.flywaydb.core: DEBUG
     org.springframework.security.oauth2: DEBUG
     org.springframework.security: DEBUG
-
-openapi:
-  url: http://localhost:8081/user
-  description: This is user open api swagger.
