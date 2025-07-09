@@ -22,10 +22,9 @@ spring:
         jwt:
           issuer-uri: http://auth-service:8081
 
-jwt:
-  secret: ofz8Tz+1GJEJ5efPxvqkTACLqdIGUoreFguLAixE/KI=
-  expiration: 86400000 # 24 hours in milliseconds
-  refresh-expiration: 604800000 # 7 days in milliseconds
+security:
+  jwt:
+    secret: ofz8Tz+1GJEJ5efPxvqkTACLqdIGUoreFguLAixE/KI=
   
 logging:
   level:
