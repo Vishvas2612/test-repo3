@@ -51,9 +51,6 @@ spring:
         - name: JwtAuthenticationFilter
           args:
             secret: your-secret-key-which-should-be-long-and-secure
-  redis:
-    host: localhost
-    port: 6379
     
 
 springdoc:
