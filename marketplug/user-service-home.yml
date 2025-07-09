@@ -1,4 +1,34 @@
 spring:
-  redis:
+  flyway:
+    enabled: false
+    table: flyway_schema_history_auth
+    locations: classpath:db/migration
+    baseline-on-migrate: true
+  datasource:
     host: localhost
-    port: 6379
+    port: 5432   # ✅ Add this line
+    username: postgres
+    password: Test@123
+    url: jdbc:postgresql://${spring.datasource.host}:${spring.datasource.port}/marketplugtest
+    hikari:
+      maximum-pool-size: 2
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://auth-service:8081
+
+jwt:
+  secret: your-secret-key-which-should-be-long-and-secure
+  expiration: 86400000 # 24 hours in milliseconds
+  refresh-expiration: 604800000 # 7 days in milliseconds
+  
+logging:
+  level:
+    org.flywaydb.core: DEBUG
+    org.springframework.security.oauth2: DEBUG
+    org.springframework.security: DEBUG
