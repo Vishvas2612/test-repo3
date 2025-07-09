@@ -1,0 +1,30 @@
+spring:
+  flyway:
+    enabled: true
+    table: flyway_schema_history_auth
+    locations: classpath:db/migration
+    baseline-on-migrate: true
+  datasource:
+    host: localhost
+    port: 5432   # ✅ Add this line
+    username: postgres
+    password: Test@123
+    url: jdbc:postgresql://${spring.datasource.host}:${spring.datasource.port}/marketplugtest
+    hikari:
+      maximum-pool-size: 2
+  redis:
+    host: localhost
+    port: 6379
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8081
+
+logging:
+  level:
+    org.flywaydb.core: DEBUG
