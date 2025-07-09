@@ -1,28 +1,4 @@
 spring:
-  flyway:
-    enabled: false
-    table: flyway_schema_history_auth
-    locations: classpath:db/migration
-    baseline-on-migrate: true
-  datasource:
+  redis:
     host: localhost
-    port: 5432   # ✅ Add this line
-    username: postgres
-    password: Test@123
-    url: jdbc:postgresql://${spring.datasource.host}:${spring.datasource.port}/marketplugtest
-    hikari:
-      maximum-pool-size: 2
-  jpa:
-    hibernate:
-      ddl-auto: validate
-    show-sql: true
-
-security:
-  jwt:
-    secret: your-secret-key-which-should-be-long-and-secure
-    
-logging:
-  level:
-    org.flywaydb.core: DEBUG
-    org.springframework.security.oauth2: DEBUG
-    org.springframework.security: DEBUG
+    port: 6379
