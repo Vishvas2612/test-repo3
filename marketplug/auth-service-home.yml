@@ -32,3 +32,7 @@ jwt:
 logging:
   level:
     org.flywaydb.core: DEBUG
+
+openapi:
+  url: http://localhost:8081/user
+  description: This is user open api swagger.
