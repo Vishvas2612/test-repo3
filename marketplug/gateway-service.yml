@@ -53,12 +53,6 @@ spring:
   redis:
     host: localhost
     port: 6379
-    
-  security:
-    oauth2:
-      resourceserver:
-        jwt:
-          secret-key: JZ0GPiKdh4/dcMaeZStgOa6mqXE6k6VBgpWsZMNcD0i+9m5U83t8wuq0nXZZ40xsdZGIxloWVI6mmfK0z8Go1Q==
 
 springdoc:
   swagger-ui:
