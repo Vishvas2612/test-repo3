@@ -1,6 +1,6 @@
 server:
   port: 8081
-
+ 
 eureka:
   client:
     serviceUrl:
@@ -9,11 +9,11 @@ eureka:
     fetchRegistry: true
   instance:
     preferIpAddress: true
-
+ 
 logging:
   level:
     org.springframework.cloud.gateway: DEBUG
-
+ 
 spring:
   cloud:
     gateway:
@@ -41,40 +41,23 @@ spring:
         - id: user-service
           uri: lb://user-service
           predicates:
-            - Path=/user/**,/v3/api-docs/user,/swagger-ui/**
+            - Path=/user/**
           filters:
             - RewritePath=/user/(?<path>.*), /$\{path}
-            - RewritePath=/v3/api-docs/user, /v3/api-docs
-            - RewritePath=/swagger-ui/(?<path>.*), /$\{path}
-        # Explicit Swagger UI Route
-        - id: swagger-ui
-          uri: lb://user-service
-          predicates:
-            - Path=/swagger-ui.html
-          filters:
-            - RewritePath=/swagger-ui.html, /swagger-ui/index.html
-        
-        # API Documentation Route
-        - id: api-docs
-          uri: lb://user-service
+        - id: openapi
+          uri: http://localhost:${server.port}
           predicates:
             - Path=/v3/api-docs/**
           filters:
-            - RewritePath=/v3/api-docs/(?<service>.*), /$\{service}/v3/api-docs
+            - RewritePath=/v3/api-docs/(?<path>.*), /$\{path}/v3/api-docs
   redis:
     host: localhost
     port: 6379
-
-# Springdoc OpenAPI Configuration
+ 
 springdoc:
   swagger-ui:
-    path: /swagger-ui.html
-    url: /v3/api-docs
     urls:
-      - name: User Service
-        url: /v3/api-docs/user
-      - name: Auth Service
+      - name: auth
         url: /v3/api-docs/auth
-    tags-sorter: alpha
-    operations-sorter: alpha
-    doc-expansion: none
+      - name: user
+        url: /v3/api-docs/user
