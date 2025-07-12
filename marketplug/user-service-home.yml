@@ -26,7 +26,7 @@ security:
   
 logging:
   file:
-    name: logs/${spring.application.name}.log
+    name: logs/${spring.application.name}.log  # fallback path if logback fails
   level:
     root: INFO
     com.marketplug: DEBUG
