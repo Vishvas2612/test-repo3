@@ -25,7 +25,11 @@ security:
     secret: ofz8Tz+1GJEJ5efPxvqkTACLqdIGUoreFguLAixE/KI=
   
 logging:
+  file:
+    name: logs/${spring.application.name}.log
   level:
+    root: INFO
+    com.marketplug: DEBUG
     org.flywaydb.core: DEBUG
     org.springframework.security.oauth2: DEBUG
     org.springframework.security: DEBUG
